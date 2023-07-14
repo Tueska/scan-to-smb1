@@ -4,6 +4,8 @@ import glob, os, shutil, time
 
 print('File watcher started')
 
+sleepTime = os.getenv('FILE_WATCHER_SLEEP')
+
 while True:
   i = 0
   while True:
@@ -42,4 +44,4 @@ while True:
       except (FileNotFoundError, OSError) as err:
         print("↳ " + str(err))
       
-  time.sleep(5)
+  time.sleep(sleepTime)
